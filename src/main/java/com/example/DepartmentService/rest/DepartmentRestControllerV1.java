@@ -65,6 +65,8 @@ package com.example.DepartmentService.rest;
 import com.example.DepartmentService.dto.DepartmentDto;
 import com.example.DepartmentService.model.Department;
 import com.example.DepartmentService.service.impl.DepartmentServiceImpl;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -83,6 +85,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/v1/departments")
+@Tag(name = "Department Rest Controller V1", description = "Controller to illustrate swagger operation")
 public class DepartmentRestControllerV1 {
 
 
@@ -95,6 +98,7 @@ public class DepartmentRestControllerV1 {
 
     @PostMapping
     @PreAuthorize("hasAuthority('departments:write')")
+    @Operation(summary = "Add new \"Department\"")
     public ResponseEntity<?> create (@RequestBody @NonNull DepartmentDto departmentDto){
         log.info("Inside create method in DepartmentRestControllerV1 {}", departmentDto.toEntity());
         Department department = departmentService.create(departmentDto.toEntity());
@@ -104,6 +108,7 @@ public class DepartmentRestControllerV1 {
 
     @PutMapping
     @PreAuthorize("hasAuthority('departments:write')")
+    @Operation(summary = "Update \"Department\"")
     public ResponseEntity<?> update(@RequestBody @NonNull DepartmentDto departmentDto) {
         log.info("Inside update method in DepartmentRestControllerV1 {}", departmentDto.toEntity());
         Department department = departmentService.update(departmentDto.toEntity());
@@ -113,6 +118,7 @@ public class DepartmentRestControllerV1 {
 
     @GetMapping
     @PreAuthorize("hasAuthority('departments:read')")
+    @Operation(summary = "Get all \"Department\" list")
     public ResponseEntity<?> getAll() {
         log.info("Inside getAll method in DepartmentRestControllerV1");
         List<Department> departmentList = departmentService.getAll();
@@ -129,6 +135,7 @@ public class DepartmentRestControllerV1 {
 
     @GetMapping("/{id}")
     @PreAuthorize("hasAuthority('departments:read')")
+    @Operation(summary = "Get \"Department\" by id")
     public ResponseEntity<?> getById(@PathVariable("id") Long id) {
         log.info("Inside getById method in DepartmentRestControllerV1 {}", id);
         Department department = departmentService.getById(id);
@@ -138,6 +145,7 @@ public class DepartmentRestControllerV1 {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('departments:write')")
+    @Operation(summary = "Delete \"Department\" by id")
     public ResponseEntity<?> deleteById(@PathVariable("id") Long id) {
         log.info("Inside deleteById method in DepartmentRestControllerV1 {}", id);
         departmentService.deleteById(id);
@@ -147,6 +155,7 @@ public class DepartmentRestControllerV1 {
 
     @GetMapping("/getAllUsers")
     @PreAuthorize("hasAuthority('departments:write')")
+    @Operation(summary = "Get all \"User\" list from UserService")
     public ResponseEntity<?> getAllUsers() {
         log.info("Inside getAllUsers method in DepartmentRestControllerV1");
 
