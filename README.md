@@ -5,14 +5,14 @@
 
 
 
-              GNU AFFERO GENERAL PUBLIC LICENSE
-                 Version 3, 19 November 2007
+                                            GNU AFFERO GENERAL PUBLIC LICENSE
+                                               Version 3, 19 November 2007
 
 Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
 Everyone is permitted to copy and distribute verbatim copies
 of this license document, but changing it is not allowed.
 
-                            Preamble
+                                                       Preamble
 
 The GNU Affero General Public License is a free, copyleft license for
 software and other kinds of works, specifically designed to ensure
@@ -69,24 +69,15 @@ modification follow.
 
 
  ````
- git clone https://github.com/yhtyyar/UserService
- ````
- 
-## Build project
-
- ````
- mvn clean install
+ git clone https://github.com/yhtyyar/DepartamentService
  ````
  
  ## API 
  
- <h4> GET    (http://localhost:8081/api/v1/departments/{ id })          Get Department by id     </h4>
- <h4> GET    (http://localhost:8081/api/v1/departments/)                Get all Department       </h4> 
- <h4> POST   (http://localhost:8081/api/v1/departments/{ Department })  Create Department        </h4>  
- <h4> PUT    (http://localhost:8081/api/v1/departments/{ Department })  Update Department        </h4> 
- <h4> DELETE (http://localhost:8081/api/v1/departments/{ id })          Delete Department by id  </h4>  
- 
- <h4> GET    (http://localhost:8081/api/v1/departments/getAllUsers)     Get all Users with UserService  </h4>
+ ##  <a href="http://localhost:8081/swagger-ui/index.html"> Swagger </a>
+
+
+![Image alt](https://github.com/yhtyyar/DepartamentService/raw/master/src/main/resources/screenshots/Swagger_UI_DepartmentService.png)
  
  
  ## Data for authorization
@@ -114,3 +105,7 @@ modification follow.
  ````
  
  ## Authorization link:  http://localhost:8081/auth/login 
+
+## Before launch, you need to add your data to application.properties
+
+# Used technologies: Java 11, Spring Boot, Spring Security, PostgresSQL, Flyway, Lombok, Maven, Open API(swagger)
