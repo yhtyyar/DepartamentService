@@ -1,7 +1,8 @@
-# DepartamentService  (Part microservice 2 of 2)
+# DepartamentService  (Part microservice 2 of 3)
 
 ## First part microservice  https://github.com/yhtyyar/UserService
 
+## Third part microservice https://github.com/yhtyyar/InorganicChemistryService
 
 
 
